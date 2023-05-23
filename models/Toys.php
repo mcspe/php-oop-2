@@ -7,8 +7,8 @@
     /**
      * @var String $_subcategory
      */
-    function __construct($_brand, $_name, $_price, $_topVisibility, $_subcategory) {
-      parent::__construct($_brand, $_name, $_price, $_topVisibility);
+    function __construct($_category, $_brand, $_name, $_price, $_topVisibility, $_subcategory) {
+      parent::__construct($_category, $_brand, $_name, $_price, $_topVisibility);
       $this->setSubcategory($_subcategory);
     }
 

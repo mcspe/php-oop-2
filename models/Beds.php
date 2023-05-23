@@ -2,21 +2,21 @@
   require_once __DIR__ . '/Product.php';
 
   class Beds extends Product {
-    private $petSize;
+    private $subcategory;
 
     /**
      * @var String $_petSize
      */
-    function __construct($_brand, $_name, $_price, $_topVisibility, $_petSize) {
-      parent::__construct($_brand, $_name, $_price, $_topVisibility);
-      $this->setPetSize($_petSize);
+    function __construct($_category, $_brand, $_name, $_price, $_topVisibility, $_subcategory) {
+      parent::__construct($_category, $_brand, $_name, $_price, $_topVisibility);
+      $this->setSubcategory($_subcategory);
     }
 
-    public function setPetSize($_petSize){
-      $this->petSize = $_petSize;
+    public function setSubcategory($_subcategory){
+      $this->subcategory = $_subcategory;
     }
 
-    public function getPetSize(){
-      return $this->petSize;
+    public function getSubcategory(){
+      return $this->subcategory;
     }
   }

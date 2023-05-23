@@ -8,12 +8,14 @@
     private $topVisibility;
 
     /**
+     * @var String $_category,
      * @var String $_brand, 
      * @var String @$_name,
      * @var Int @$_price,
      * @var Boolean @$_topVisibility
     */
-    function __construct($_brand, $_name, $_price, $_topVisibility){
+    function __construct($_category, $_brand, $_name, $_price, $_topVisibility){
+      $this->setCategory($_category);
       $this->setBrand($_brand);
       $this->setName($_name);
       $this->setPrice($_price);

@@ -1,5 +1,7 @@
 <?php
   require_once __DIR__ . '/DB/DB.php';
+  var_dump($topVisibilityProduct);
+  
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +93,18 @@
           <img src="img/section-cats.jpg" alt="Gatti" class="img-fluid">
           <div class="overlay d-flex justify-content-center align-items-center">
             <h3>GATTI</h3>
+          </div>
+        </div>
+      </div>
+      <div class="topVisibility my-5 d-flex justify-content-between gap-3">
+        <div class="ms-product-card">
+          <img src="img/dog-home-2.jpg" alt="" class="img-fluid">
+          <div class="ms-product-info p-3">
+            <h2>Titolo</h2>
+            <span>cat</span>
+            <span>sub_cat</span>
+            <p>price</p>
+
           </div>
         </div>
       </div>
