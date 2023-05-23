@@ -1,8 +1,7 @@
 <?php
   require_once __DIR__ . '/Product.php';
 
-  class Food extends Product {
-    private $ageTarget;
+  class Toys extends Product {
     private $subcategory;
 
     /**
@@ -19,13 +18,5 @@
 
     public function getSubcategory(){
       return $this->subcategory;
-    }
-
-    public function setAgeTarget($_ageTarget){
-      $this->ageTarget = $_ageTarget;
-    }
-
-    public function getAgeTarget(){
-      return $this->ageTarget;
     }
   }
