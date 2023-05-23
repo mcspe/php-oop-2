@@ -5,11 +5,19 @@
     private $name;
     private $price;
     private $category;
+    private $topVisibility;
 
-    function __construct($_brand, $_name, $_price){
+    /**
+     * @var String $_brand, 
+     * @var String @$_name,
+     * @var Int @$_price,
+     * @var Boolean @$_topVisibility
+    */
+    function __construct($_brand, $_name, $_price, $_topVisibility){
       $this->setBrand($_brand);
       $this->setName($_name);
       $this->setPrice($_price);
+      $this->setVisibility($_topVisibility);
     }
 
     public function setBrand($_brand){
@@ -50,5 +58,13 @@
     
     public function getCategory(){
       return $this->category;
+    }
+
+    public function setVisibility($_topVisibility){
+      $this->topVisibility = $_topVisibility;
+    }
+    
+    public function getVisibility(){
+      return $this->topVisibility;
     }
   }
