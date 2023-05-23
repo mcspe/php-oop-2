@@ -1,6 +1,6 @@
 <?php
   require_once __DIR__ . '/DB/DB.php';
-  var_dump($topVisibilityProduct);
+  // var_dump($topVisibilityProduct);
   
 ?>
 
@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- FAVICON -->
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <!-- BOOTSTRAP -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
   <!-- FONTAWESOME -->
@@ -96,22 +96,52 @@
           </div>
         </div>
       </div>
-      <div class="topVisibility my-5 d-flex justify-content-between gap-3">
-        <div class="ms-product-card">
-          <img src="img/dog-home-2.jpg" alt="" class="img-fluid">
-          <div class="ms-product-info p-3">
-            <h2>Titolo</h2>
-            <span>cat</span>
-            <span>sub_cat</span>
-            <p>price</p>
+      <div class="topVisibility my-5 d-flex justify-content-between gap-3 flex-wrap">
+        <?php foreach ($topVisibilityProduct as $product) : ?>
+          <div class="ms-product-card d-flex flex-column align-items-center">
+            <img src="<?php echo 'img/' . $product->getPicture() ?>" alt="<?php echo $product->getName() ?>">
+            <div class="ms-product-info p-3 text-center">
+              <h2><?php echo $product->getBrand() . ' - ' .  $product->getName() ?></h2>
+              <span class="category px-2">
+                <?php echo ($product->getCategory() === 'dog') ? '<i class="fa-solid fa-dog" style="color: #4bffec;"></i>' : '<i class="fa-solid fa-cat" style="color: #4bffec;"></i>' ?>
+              </span>
+              <p class="my-3 text-primary"><?php echo '€ ' .  $product->getPrice() ?></p>
+              <span class="subCategory">
+                <?php if($product->getSubcategory() === 'food') :?>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/astwhuoq.json"
+                    trigger="hover"
+                    colors="primary:#cb5eee,secondary:#2516c7">
+                  </lord-icon>
+                <?php elseif ($product->getSubcategory() === 'toy') : ?>
+                  <lord-icon
+                  src="https://cdn.lordicon.com/kwnsphnf.json"
+                  trigger="hover"
+                  colors="primary:#cb5eee,secondary:#2516c7">
+                  </lord-icon>
+                <?php elseif ($product->getSubcategory() === 'home') : ?>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/kxoxiwrf.json"
+                    trigger="hover"
+                    colors="primary:#cb5eee,secondary:#2516c7">
+                  </lord-icon>
+                <?php endif ?>
+                
+              </span>
 
+            </div>
           </div>
-        </div>
+        <?php endforeach ?>
       </div>
     </div>
   </main>
-  <!-- <footer>
-    <a href="https://lordicon.com/">Icons by Lordicon.com</a>
-  </footer> -->
+  <footer>
+    <div class="container-fluid py-3 text-center">
+      <span>Credits</span>
+      <a href="https://github.com/mcspe">@mcspe</a>
+      <span> - </span>
+      <a href="https://lordicon.com/">Icons by Lordicon.com</a>
+    </div>
+  </footer>
 </body>
 </html>
