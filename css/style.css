@@ -1,0 +1,70 @@
+body {
+  background: rgba(75, 225, 236, .1);
+}
+
+lord-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.ms-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 0 3rem white;
+}
+
+.ms-nav img {
+  max-height: 3rem;
+}
+
+.ms-nav a {
+  color: #CB5EEE;
+  transition: all .7s ease-out;
+}
+.ms-nav a:hover {
+  color: #4BE1EC;
+  transition: all .7s ease-out;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.ms-jumbotron {
+  height: 30rem;
+}
+
+.ms-jumbotron img {
+  object-fit: cover;
+  object-position: center center;
+  max-height: 100%;
+  width: 100%;
+}
+
+.ms-card {
+  cursor: pointer;
+  max-width: 35%;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  transition: all .7s ease-out;
+}
+
+.ms-card:hover img {
+  scale: 1.2;
+  transition: all .7s ease-out;
+}
+
+.ms-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .3);
+  color: whitesmoke;
+}
